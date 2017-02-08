@@ -6,7 +6,7 @@ import org.junit.Test;
 public class SessaoTest {
 
 	@Test
-	public void deveVender1ingressoSeHa2vagas() throws Exception {
+	public void deveVenderAteLimiteDeIngressos() throws Exception {
 		Sessao sessao = new Sessao();
         sessao.setTotalIngressos(2);
 
@@ -14,19 +14,19 @@ public class SessaoTest {
 	}
 	
 	@Test
-	public void deveVender5ingressosSeHa10vagas() throws Exception {
-		Sessao sessao = new Sessao();
-		sessao.setTotalIngressos(10);
-		
-		Assert.assertTrue(sessao.podeReservar(5));
-	}
-
-	@Test
-	public void naoDeveVender3ingressoSeHa2vagas() throws Exception {
+	public void naoDeveVenderQtdIngressosMaiorQueDisponivel() throws Exception {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(2);
 
 		Assert.assertFalse(sessao.podeReservar(3));
+	}
+	
+	@Test
+	public void deveVenderTodosOsIngressos(){
+		Sessao sessao = new Sessao();
+		sessao.setTotalIngressos(2);
+		
+		Assert.assertTrue(sessao.podeReservar(2));
 	}
 
 	@Test
@@ -38,12 +38,6 @@ public class SessaoTest {
 		Assert.assertEquals(2, sessao.getIngressosDisponiveis().intValue());
 	}
 	
-	@Test
-	public void deveVender2IngressosSeHa2Vagas(){
-		Sessao sessao = new Sessao();
-		sessao.setTotalIngressos(2);
-		
-		Assert.assertTrue(sessao.podeReservar(2));
-	}
+
 	
 }
