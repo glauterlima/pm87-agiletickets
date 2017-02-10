@@ -3,6 +3,8 @@ package br.com.caelum.agiletickets.models;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import org.junit.Test;
 
 public class EspetaculoTest {
@@ -79,6 +81,21 @@ public class EspetaculoTest {
 		sessao.setIngressosReservados(quantidade);
 
 		return sessao;
+	}
+	
+	@Test
+	public void deveCriarUmaUnicaSessaoQuandoInicioIgualAFim(){
+		//arrange
+		Espetaculo espetaculo = new Espetaculo();
+		LocalDate inicio = new LocalDate(2017, 2, 9);
+		LocalDate inicio;
+		LocalTime horario
+		Periodicidade periodicidade = new Periodicidade.DIARIA;
+		//act
+		espetaculo.criaSessoes(inicio, fim, horario, periodicidade);
+		
+		//asert
+		
 	}
 	
 }
