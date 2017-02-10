@@ -58,7 +58,7 @@ public class EspetaculoTest {
 				
 				//assert
 				Assert.assertNotNull("A lista de sessoes nao deve ser nula", sessoes);
-				Assert.assertEquals(30, sessoes.size());
+				Assert.assertEquals(3, sessoes.size());
 				
 				Sessao unica = sessoes.get(0);
 				Assert.assertEquals(espetaculo, unica.getEspetaculo());
