@@ -58,7 +58,7 @@ public class EspetaculoTest {
 				
 				//assert
 				Assert.assertNotNull("A lista de sessoes nao deve ser nula", sessoes);
-				Assert.assertEquals(3, sessoes.size());
+				Assert.assertEquals(30, sessoes.size());
 				
 				Sessao unica = sessoes.get(0);
 				Assert.assertEquals(espetaculo, unica.getEspetaculo());
@@ -141,7 +141,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertTrue(ivete.Vagas(5));
+		assertTrue(ivete.vagas(5));
 	}
 
 	@Test
@@ -152,7 +152,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertTrue(ivete.Vagas(6));
+		assertTrue(ivete.vagas(6));
 	}
 
 	@Test
@@ -163,7 +163,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertFalse(ivete.Vagas(15));
+		assertFalse(ivete.vagas(15));
 	}
 
 	@Test
@@ -174,7 +174,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(4));
 
-		assertTrue(ivete.Vagas(5, 3));
+		assertTrue(ivete.vagas(5, 3));
 	}
 
 	@Test
@@ -185,7 +185,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(4));
 
-		assertTrue(ivete.Vagas(10, 3));
+		assertTrue(ivete.vagas(10, 3));
 	}
 
 	@Test
@@ -196,7 +196,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
-		assertFalse(ivete.Vagas(5, 3));
+		assertFalse(ivete.vagas(5, 3));
 	}
 
 	private Sessao sessaoComIngressosSobrando(int quantidade) {

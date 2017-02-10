@@ -136,7 +136,7 @@ public class Espetaculo {
 		return lista;
 	}
 
-	public boolean Vagas(int qtd, int min) {
+	public boolean vagas(int qtd, int min) {
 		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
 		int totDisp = 0;
 
@@ -146,13 +146,10 @@ public class Espetaculo {
 			totDisp += s.getIngressosDisponiveis();
 		}
 
-		if (totDisp >= qtd)
-			return true;
-		else
-			return false;
+		return totDisp >= qtd;
 	}
 
-	public boolean Vagas(int qtd) {
+	public boolean vagas(int qtd) {
 		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
 		int totDisp = 0;
 
@@ -160,10 +157,7 @@ public class Espetaculo {
 			totDisp += s.getIngressosDisponiveis();
 		}
 
-		if (totDisp >= qtd)
-			return true;
-		else
-			return false;
+		return totDisp >= qtd;
 	}
 
 }
